@@ -1,0 +1,251 @@
+HTML
+<!DOCTYPE html>
+<html lang="no">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Otto Junior | Official Website</title>
+    <style>
+        /* Fargepalett hentet direkte fra din Emergent-app */
+        :root {
+            --vintage-bg: #121110;
+            --vintage-bg2: #1c1a18;
+            --vintage-gold: #d4af37;
+            --vintage-rust: #b85a38;
+            --vintage-cream: #f4edd8;
+        }
+
+        body {
+            margin: 0;
+            font-family: 'Courier New', Courier, monospace; /* Røff, vintage stil */
+            background-color: var(--vintage-bg);
+            color: var(--vintage-cream);
+        }
+
+        /* Navigasjon */
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 30px 5%;
+            background-color: transparent;
+            position: absolute;
+            width: 90%;
+            z-index: 10;
+        }
+
+        .logo {
+            font-size: 1.8rem;
+            font-weight: bold;
+            color: var(--vintage-gold);
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+
+        .nav-links a {
+            color: var(--vintage-cream);
+            text-decoration: none;
+            margin-left: 25px;
+            font-size: 0.8rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+
+        .tickets-btn {
+            background-color: var(--vintage-rust);
+            color: white;
+            padding: 10px 20px;
+            text-decoration: none;
+            text-transform: uppercase;
+            font-weight: bold;
+            letter-spacing: 1px;
+        }
+
+        /* Hero Seksjon (Forsiden din) */
+        .hero {
+            height: 100vh;
+            background: linear-gradient(rgba(18,17,16,0.5), var(--vintage-bg)), url('https://customer-assets.emergentagent.com/job_sonic-hub-81/artifacts/7xiypaeq_IMG_2793%208.jpg') no-repeat center center/cover;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            padding-left: 10%;
+            position: relative;
+        }
+
+        .hero-sub {
+            color: var(--vintage-rust);
+            font-size: 0.9rem;
+            letter-spacing: 5px;
+            text-transform: uppercase;
+            margin-bottom: 10px;
+        }
+
+        .hero h1 {
+            font-size: 5rem;
+            color: white;
+            margin: 0 0 20px 0;
+            text-transform: uppercase;
+            letter-spacing: 4px;
+        }
+
+        .hero p {
+            font-style: italic;
+            max-width: 500px;
+            font-size: 1.2rem;
+            color: rgba(244, 237, 216, 0.8);
+            margin-bottom: 30px;
+            line-height: 1.6;
+        }
+
+        .cta-buttons a {
+            display: inline-block;
+            padding: 15px 30px;
+            text-decoration: none;
+            font-weight: bold;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-right: 15px;
+        }
+
+        .btn-primary { background-color: var(--vintage-rust); color: white; }
+        .btn-secondary { border: 1px solid var(--vintage-cream); color: var(--vintage-cream); }
+
+        /* Seksjons-oppsett */
+        .section {
+            padding: 100px 10%;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .section-tag {
+            color: var(--vintage-rust);
+            font-size: 0.8rem;
+            letter-spacing: 4px;
+            text-transform: uppercase;
+            margin-bottom: 5px;
+        }
+
+        .section-title {
+            font-size: 3rem;
+            color: var(--vintage-gold);
+            text-transform: uppercase;
+            margin-top: 0;
+            margin-bottom: 40px;
+            letter-spacing: 2px;
+        }
+
+        /* LIVE ON STAGE (Galleriet du sendte kode på) */
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(12, 1fr);
+            gap: 20px;
+        }
+
+        .gallery-item {
+            position: relative;
+            overflow: hidden;
+            border: 1px solid rgba(244, 237, 216, 0.1);
+            background-color: var(--vintage-bg2);
+        }
+
+        .gallery-item img {
+            width: 100%;
+            height: 100%;
+            object-cover: cover;
+            display: block;
+            transition: transform 0.7s;
+            filter: contrast(1.04) saturate(0.95);
+        }
+
+        .gallery-item:hover img { transform: scale(1.05); }
+
+        .gallery-caption {
+            position: absolute;
+            bottom: 15px;
+            left: 15px;
+            right: 15px;
+            display: flex;
+            justify-content: space-between;
+            font-size: 0.7rem;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+        }
+
+        /* Grid-styring basert på koden din */
+        .col-5 { grid-column: span 5; min-height: 420px; }
+        .col-7 { grid-column: span 7; min-height: 300px; }
+
+        @media (max-width: 768px) {
+            .col-5, .col-7 { grid-column: span 12; min-height: 260px; }
+            .hero h1 { font-size: 3rem; }
+            nav { display: none; } /* Enkel fiks for mobilmeny */
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Navigasjonsbar -->
+    <nav>
+        <div class="logo">Otto Junior</div>
+        <div class="nav-links">
+            <a href="#music">Music</a>
+            <a href="#live">Tour Dates</a>
+            <a href="#live">Gallery</a>
+            <a href="#contact" class="tickets-btn">Tickets</a>
+        </div>
+    </nav>
+
+    <!-- Hovedskjerm (Hero) -->
+    <div class="hero">
+        <p class="hero-sub">/ / New Studio Album</p>
+        <h1>Otto Junior</h1>
+        <p>"Smoke On The Mountain" — out everywhere November 14th. Six strings, a Hammond organ, and a whole lot of whiskey-soaked soul. Cooked low & slow since '14.</p>
+        <div class="cta-buttons">
+            <a href="#" class="btn-primary">Listen Now</a>
+            <a href="#live" class="btn-secondary">Tour Dates →</a>
+        </div>
+    </div>
+
+    <!-- Live On Stage bildegalleri (Det du sendte koden på!) -->
+    <section id="live" class="section">
+        <p class="section-tag">/ / From The Road</p>
+        <h2 class="section-title">Live On Stage</h2>
+        <p style="font-style: italic; margin-bottom: 40px; max-width: 500px;">Sweaty rooms, midnight encores, and the occasional broken string. Catch us in your town next.</p>
+
+        <div class="gallery-grid">
+            <!-- Bilde 1 -->
+            <div class="gallery-item col-5">
+                <img src="https://images.unsplash.com/photo-1511192336575-5a79af67a629?q=80&w=1200" alt="Otto Junior under pink stage lights">
+                <div class="gallery-caption">
+                    <span style="color: rgba(244,237,216,0.85);">Stage lights · Spring '25</span>
+                    <span style="color: var(--vintage-rust);">✦ Otto Junior</span>
+                </div>
+            </div>
+
+            <!-- Bilde 2 -->
+            <div class="gallery-item col-7">
+                <img src="https://customer-assets.emergentagent.com/job_sonic-hub-81/artifacts/7xiypaeq_IMG_2793%208.jpg" alt="Otto Junior band performing">
+                <div class="gallery-caption">
+                    <span style="color: rgba(244,237,216,0.85);">Three of us, one mic</span>
+                    <span style="color: var(--vintage-rust);">✦ Otto Junior</span>
+                </div>
+            </div>
+
+            <!-- Bilde 3 -->
+            <div class="gallery-item col-12" style="grid-column: span 12; height: 350px;">
+                <img src="https://customer-assets.emergentagent.com/job_sonic-hub-81/artifacts/1yrdhu1b_IMG_2052%205.jpg" alt="Guitarist playing telecaster">
+                <div class="gallery-caption">
+                    <span style="color: rgba(244,237,216,0.85);">Telecaster · Festival '23</span>
+                    <span style="color: var(--vintage-rust);">✦ Otto Junior</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Enkel fotnote -->
+    <footer style="text-align: center; padding: 40px; background-color: var(--vintage-bg2); font-size: 0.8rem; letter-spacing: 1px;">
+        <p>&copy; 2026 OTTO JUNIOR. All rights reserved.</p>
+    </footer>
+
+</body>
+</html>
